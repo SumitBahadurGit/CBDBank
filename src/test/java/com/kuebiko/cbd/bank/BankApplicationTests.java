@@ -1,8 +1,8 @@
 package com.kuebiko.cbd.bank;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-@SpringBootTest(classes=BankApplicationTests.class)
+@SpringBootTest
 class BankApplicationTests {
 	@Test
 	void contextLoads() {
