@@ -1,10 +1,18 @@
-package com.kuebiko.cbd.bank.model;
+package com.kuebiko.cbd.bank.entity;
+
+import javax.persistence.*;
 import java.util.Date;
 
-public class Transaction {
+public class TransactionEntity {
 
-    private Long invoice;  //same to orderNum from OrderData
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long invoice;
+
+    @Column
     private Date date;
+
+    @Column
     private boolean successful;
 
     public Long getInvoice() {
