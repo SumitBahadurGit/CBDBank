@@ -1,4 +1,4 @@
 package com.kuebiko.cbd.bank.dao;
 
-public class ProductDao {
+public class ProductDao extends Dao{
 }
