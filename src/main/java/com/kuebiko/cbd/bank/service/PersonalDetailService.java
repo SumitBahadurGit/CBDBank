@@ -1,17 +1,29 @@
 package com.kuebiko.cbd.bank.service;
 
 import com.kuebiko.cbd.bank.dao.Dao;
+import com.kuebiko.cbd.bank.dao.UserDao;
+import com.kuebiko.cbd.bank.model.PersonalDetails;
+import org.apache.catalina.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PersonalDetailService extends BaseService {
-    @Override
-    public Dao getDao() {
-        return null;
+public class PersonalDetailService extends BaseService<PersonalDetails,PersonalDetails> {
+
+    @Autowired
+    PersonalDetailService(UserDao userDao){
+        super(userDao);
     }
 
     @Override
     public void find(Long paymentId, Long userId) {
 
     }
+
+    @Override
+    public PersonalDetails save(PersonalDetails data) {
+        return null;
+    }
+
+
 }

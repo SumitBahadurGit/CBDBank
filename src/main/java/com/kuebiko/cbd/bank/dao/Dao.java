@@ -1,6 +1,8 @@
 package com.kuebiko.cbd.bank.dao;
 
-public abstract class Dao {
+import com.kuebiko.cbd.bank.model.Payment;
 
-    
+public abstract class Dao<U> implements  DaoIf<U>{
+
+
 }
