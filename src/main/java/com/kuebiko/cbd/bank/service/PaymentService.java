@@ -16,4 +16,9 @@ public class PaymentService extends BaseService {
     public Dao getDao() {
         return paymentDao;
     }
+
+    @Override
+    public void find(Long paymentId, Long userId) {
+        // to do
+    }
 }

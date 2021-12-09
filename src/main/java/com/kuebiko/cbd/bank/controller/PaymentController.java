@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentController extends BaseController {
 
     @Autowired
-    private PaymentService paymentService;
+    PaymentController(PaymentService paymentService)   {
 
-    @Override
-    public BaseService getService() {
-        return paymentService;
+        super(paymentService);
+
     }
 
     @GetMapping
     @RequestMapping("/find")
     public Payment find(@RequestParam Long paymentId,
                         @RequestParam Long userId){
+        getService().find(paymentId, userId);
         return new Payment();
     }
 

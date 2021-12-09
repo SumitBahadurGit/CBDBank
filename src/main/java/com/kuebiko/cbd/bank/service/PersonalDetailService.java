@@ -9,4 +9,9 @@ public class PersonalDetailService extends BaseService {
     public Dao getDao() {
         return null;
     }
+
+    @Override
+    public void find(Long paymentId, Long userId) {
+
+    }
 }
