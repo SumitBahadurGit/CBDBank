@@ -27,4 +27,9 @@ public class PaymentDao extends Dao<Payment>{
         Payment respose = new Payment();
         return  respose;
     }
+
+    @Override
+    public Payment find(Long id) {
+        return null;
+    }
 }

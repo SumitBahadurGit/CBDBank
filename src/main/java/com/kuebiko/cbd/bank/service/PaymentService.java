@@ -17,13 +17,19 @@ public class PaymentService extends BaseService<Payment,Payment> {
 
 
     @Override
-    public void find(Long paymentId, Long userId) {
+    public Payment find(Long paymentId, Long userId) {
+        return null;
     }
 
     @Override
     public Payment save(Payment data) {
 
         return (Payment) dao.save(data);
+    }
+
+    @Override
+    public Payment find(Long userId) {
+        return null;
     }
 
 
