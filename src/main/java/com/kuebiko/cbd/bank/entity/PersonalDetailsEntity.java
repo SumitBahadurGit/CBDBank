@@ -4,6 +4,7 @@ package com.kuebiko.cbd.bank.entity;
 import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class PersonalDetailsEntity {
 
     @Id

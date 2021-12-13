@@ -3,11 +3,15 @@ package com.kuebiko.cbd.bank.dao;
 
 import com.kuebiko.cbd.bank.entity.PersonalDetailsEntity;
 import com.kuebiko.cbd.bank.model.PersonalDetails;
+import com.kuebiko.cbd.bank.repo.PersonalDetailsRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UserDao extends Dao<PersonalDetails>{
 
+    @Autowired
+    private PersonalDetailsRepo personalDetailsRepo;
 
     @Override
     public PersonalDetails save(PersonalDetails personalDetails) {
@@ -37,7 +41,19 @@ public class UserDao extends Dao<PersonalDetails>{
 
     @Override
     public PersonalDetails find(Long id) {
-        PersonalDetailsEntity personalDetailsEntity= personalDetailsEntity.
+        PersonalDetailsEntity personalDetailsEntity=personalDetailsRepo.getById(id);
+
+        PersonalDetails personalDetails=new PersonalDetails();
+
+        personalDetails.setDob(personalDetailsEntity.getDob());
+        personalDetails.setGender(personalDetailsEntity.getGender());
+        personalDetails.setLastName(personalDetailsEntity.getLastName());
+        personalDetails.setEmail(personalDetailsEntity.getEmail());
+        personalDetails.setId(personalDetailsEntity.getId());
+        personalDetails.setFirstName(personalDetailsEntity.getFirstName());
+        personalDetails.setPhoneNumber(personalDetailsEntity.getPhoneNumber());
+
+        return  personalDetails;
     }
 
 }

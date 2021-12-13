@@ -8,4 +8,9 @@ public class ProductDao extends Dao<Payment>{
     public Payment save(Payment payment) {
         return null;
     }
+
+    @Override
+    public Payment find(Long id) {
+        return null;
+    }
 }
