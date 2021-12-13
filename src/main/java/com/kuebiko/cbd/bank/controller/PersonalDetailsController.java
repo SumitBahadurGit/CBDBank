@@ -7,6 +7,8 @@ import com.kuebiko.cbd.bank.service.PersonalDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@RestController
+@RequestMapping("/details")
 public class PersonalDetailsController extends BaseController {
 
     @Autowired
@@ -22,8 +24,8 @@ public class PersonalDetailsController extends BaseController {
 
     @GetMapping
     @RequestMapping("/find")
-    public PersonalDetails findUser(@RequestParam Long paymentId,@RequestParam Long userId){
-        getService().find(userId, userId);
-        return new PersonalDetails();
+    public PersonalDetails findUser(@RequestParam Long userId){
+
+        return (PersonalDetails) getService().find(userId);
     }
 }

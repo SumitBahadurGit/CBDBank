@@ -27,5 +27,10 @@ public class PaymentService extends BaseService<Payment,Payment> {
         return (Payment) dao.save(data);
     }
 
+    @Override
+    public Payment find(Long userId) {
+        return null;
+    }
+
 
 }

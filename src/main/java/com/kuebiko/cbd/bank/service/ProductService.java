@@ -27,4 +27,9 @@ public class ProductService extends BaseService<Product,Product> {
         return null;
     }
 
+    @Override
+    public Product find(Long userId) {
+        return null;
+    }
+
 }

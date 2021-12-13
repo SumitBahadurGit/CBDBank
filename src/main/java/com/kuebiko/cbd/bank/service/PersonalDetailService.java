@@ -18,13 +18,19 @@ public class PersonalDetailService extends BaseService<PersonalDetails,PersonalD
 
     @Override
     public PersonalDetails find(Long paymentId, Long userId) {
-        PersonalDetails personalDetails=(PersonalDetails) dao.find(userId);
-        return personalDetails;
+        //PersonalDetails personalDetails=(PersonalDetails) dao.find(userId);
+        return null;
     }
 
     @Override
     public PersonalDetails save(PersonalDetails data) {
         return (PersonalDetails) dao.save(data);
+    }
+
+    @Override
+    public PersonalDetails find(Long userId) {
+        PersonalDetails personalDetails=(PersonalDetails) dao.find(userId);
+        return personalDetails;
     }
 
 

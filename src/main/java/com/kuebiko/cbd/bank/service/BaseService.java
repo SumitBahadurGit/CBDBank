@@ -10,6 +10,7 @@ public abstract class BaseService <U,V> implements BaseServiceIf <U,V>{
 
     protected Dao dao;
 
+
     public BaseService(Dao baseDao) {
 
         this.dao=baseDao;
