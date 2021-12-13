@@ -17,7 +17,8 @@ public class PaymentService extends BaseService<Payment,Payment> {
 
 
     @Override
-    public void find(Long paymentId, Long userId) {
+    public Payment find(Long paymentId, Long userId) {
+        return null;
     }
 
     @Override

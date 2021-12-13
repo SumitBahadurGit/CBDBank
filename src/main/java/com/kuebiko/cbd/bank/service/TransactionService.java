@@ -13,8 +13,8 @@ public class TransactionService extends BaseService<Transaction, Transaction> {
 
 
     @Override
-    public void find(Long paymentId, Long userId) {
-
+    public Transaction find(Long paymentId, Long userId) {
+        return null;
     }
 
     @Override
