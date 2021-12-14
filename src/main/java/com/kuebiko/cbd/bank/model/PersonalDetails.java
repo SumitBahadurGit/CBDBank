@@ -1,7 +1,9 @@
 package com.kuebiko.cbd.bank.model;
 
-import java.util.Date;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.util.Date;
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PersonalDetails {
     private Long id;
     private String firstName;
@@ -10,6 +12,15 @@ public class PersonalDetails {
     private String email;
     private Long phoneNumber;
     private Character gender;
+    private String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     public Long getId() {
         return id;

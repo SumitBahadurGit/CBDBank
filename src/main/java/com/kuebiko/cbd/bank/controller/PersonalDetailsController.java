@@ -5,6 +5,8 @@ import com.kuebiko.cbd.bank.model.PersonalDetails;
 import com.kuebiko.cbd.bank.service.BaseService;
 import com.kuebiko.cbd.bank.service.PersonalDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,8 +20,16 @@ public class PersonalDetailsController extends BaseController {
 
     @PostMapping
     @RequestMapping("/save")
-    public PersonalDetails saveOrder(@RequestBody PersonalDetails payload){
-        return (PersonalDetails) getService().save(payload);
+    public ResponseEntity<PersonalDetails> saveOrder(@RequestBody PersonalDetails payload)
+    {
+        PersonalDetails response = new PersonalDetails();
+        try {
+                response =  (PersonalDetails) getService().save(payload);
+        } catch (Exception e) {
+            response.setMessage(e.getMessage());
+            return ResponseEntity.badRequest().body(response);
+        }
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping
