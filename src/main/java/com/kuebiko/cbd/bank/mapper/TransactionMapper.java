@@ -11,8 +11,9 @@ public class TransactionMapper {
         TransactionEntity transactionEntity = new TransactionEntity();
 
         transactionEntity.setInvoice(transaction.getInvoice());
-        transactionEntity.setSuccessful(transaction.getSuccessful());
-        transactionEntity.setDate(transaction.getDate());
+        transactionEntity.setTransactionDate(transaction.getDate());
+        transactionEntity.setIsSuccessful(transaction.getSuccessful());
+
 
         return transactionEntity;
     }
@@ -26,8 +27,8 @@ public class TransactionMapper {
         Transaction newTransaction = new Transaction();
 
         newTransaction.setInvoice(transactionEntity.getInvoice());
-        newTransaction.setDate(transactionEntity.getDate());
-        newTransaction.setSuccessful(transactionEntity.getSuccessful());
+        newTransaction.setDate(transactionEntity.getTransactionDate());
+        newTransaction.setSuccessful(transactionEntity.getIsSuccessful());
 
         return newTransaction;
     }

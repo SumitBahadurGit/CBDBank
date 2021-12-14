@@ -11,7 +11,7 @@ public class TransactionEntity {
     private Long invoice;
 
     @Column
-    private Date date;
+    private Date transactionDate;
 
     @Column
     private Boolean isSuccessful;
@@ -24,19 +24,19 @@ public class TransactionEntity {
         this.invoice = invoice;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getTransactionDate() {
+        return transactionDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTransactionDate(Date transactionDate) {
+        this.transactionDate = transactionDate;
     }
 
-    public Boolean getSuccessful() {
+    public Boolean getIsSuccessful() {
         return isSuccessful;
     }
 
-    public void setSuccessful(Boolean successful) {
-        this.isSuccessful = successful;
+    public void setIsSuccessful(Boolean isSuccessful) {
+        this.isSuccessful = isSuccessful;
     }
 }

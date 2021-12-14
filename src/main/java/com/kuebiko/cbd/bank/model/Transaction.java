@@ -5,7 +5,7 @@ import java.util.Date;
 public class Transaction {
     private Long invoice;
     private Date date;
-    private Boolean isSuccessful;
+    private Boolean successful;
 
     public Long getInvoice() {
         return invoice;
@@ -24,10 +24,10 @@ public class Transaction {
     }
 
     public Boolean getSuccessful() {
-        return isSuccessful;
+        return successful;
     }
 
     public void setSuccessful(Boolean successful) {
-        isSuccessful = successful;
+        this.successful = successful;
     }
 }
