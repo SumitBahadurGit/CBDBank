@@ -1,10 +1,19 @@
-package com.kuebiko.cbd.bank.model;
+package com.kuebiko.cbd.bank.entity;
 
+import javax.persistence.*;
 import java.util.Date;
 
-public class Transaction {
+@Entity
+public class TransactionEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long invoice;
+
+    @Column
     private Date date;
+
+    @Column
     private Boolean isSuccessful;
 
     public Long getInvoice() {
@@ -28,6 +37,6 @@ public class Transaction {
     }
 
     public void setSuccessful(Boolean successful) {
-        isSuccessful = successful;
+        this.isSuccessful = successful;
     }
 }
