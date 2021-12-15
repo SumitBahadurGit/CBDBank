@@ -1,16 +1,35 @@
-package com.kuebiko.cbd.bank.model;
+package com.kuebiko.cbd.bank.entity;
 
+
+import javax.persistence.*;
 import java.util.Date;
 
-public class Order {
+@Entity
+public class OrderEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long orderId;
+
+    @Column
     private String product;
+
+    @Column
     private Integer quantity;
+
+    @Column
     private Long orderBy;
+
+    @Column
     private Date orderDate;
+
+    @Column
     private Double price;
+
+    @Column
     private Double sales;
+
+    @Column
     private Double tax;
 
     public Long getOrderId() {

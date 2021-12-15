@@ -25,11 +25,21 @@ public class PaymentDao extends Dao<Payment>{
         entity =  paymentRepo.save(entity);
         // map entity to pojo/mdoel
         Payment respose = new Payment();
+        respose.setId(entity.getId());
+        respose.setAmount(entity.getAmount());
+        respose.setType(entity.getType());
+        respose.setTransactionDate(entity.getTransactionDate());
+        respose.setUserId(entity.getUserId());
         return  respose;
     }
 
     @Override
     public Payment find(Long id) {
+        return null;
+    }
+
+    @Override
+    public Payment find(Long id, Long userId) {
         return null;
     }
 }

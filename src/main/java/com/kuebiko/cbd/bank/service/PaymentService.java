@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentService extends BaseService<Payment,Payment> {
 
+    private Long paymentId;
+    private Long userId;
+
     @Autowired
     PaymentService(PaymentDao paymentDao){
         super(paymentDao);
@@ -22,14 +25,14 @@ public class PaymentService extends BaseService<Payment,Payment> {
     }
 
     @Override
-    public Payment save(Payment data) {
-
-        return (Payment) dao.save(data);
+    public Payment find(Long id) {
+        return null;
     }
 
     @Override
-    public Payment find(Long userId) {
-        return null;
+    public Payment save(Payment data) {
+
+        return (Payment) dao.save(data);
     }
 
 
