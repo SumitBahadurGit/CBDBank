@@ -1,20 +1,28 @@
 package com.kuebiko.cbd.bank.service;
 
 import com.kuebiko.cbd.bank.dao.Dao;
+import com.kuebiko.cbd.bank.dao.TransactionDao;
 import com.kuebiko.cbd.bank.model.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TransactionService extends BaseService<Transaction, Transaction> {
 
-    public TransactionService(Dao baseDao) {
-        super(baseDao);
+    @Autowired
+    public TransactionService(TransactionDao transactionDao) {
+        super(transactionDao);
     }
 
 
     @Override
-    public void find(Long paymentId, Long userId) {
+    public Transaction find(Long paymentId, Long userId) {
+        return null;
+    }
 
+    @Override
+    public Transaction find(Long id) {
+        return null;
     }
 
     @Override

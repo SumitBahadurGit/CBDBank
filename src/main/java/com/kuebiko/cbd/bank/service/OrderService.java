@@ -16,7 +16,13 @@ public class OrderService extends BaseService<Order, Order>{
 
     @Override
     public Order find(Long orderId, Long userId) {
-        Order returnOrder = (Order) dao.find(orderId);
+
+        return null;
+    }
+
+    @Override
+    public Order find(Long id) {
+        Order returnOrder = (Order) dao.find(id);
         return returnOrder;
     }
 

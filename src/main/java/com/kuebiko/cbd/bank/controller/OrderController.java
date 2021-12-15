@@ -17,8 +17,8 @@ public class OrderController extends BaseController{
 
     @GetMapping
     @RequestMapping("/find")
-    public Order findOrder(@RequestParam Long orderId, @RequestParam Long userId){
-        return (Order) getService().find(orderId, userId);
+    public Order findOrder(@RequestParam Long orderId){
+        return (Order) getService().find(orderId);
     }
 
     @PostMapping

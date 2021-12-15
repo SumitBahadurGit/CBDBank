@@ -12,4 +12,14 @@ public class UserDao extends Dao<PersonalDetails>{
     public PersonalDetails save(PersonalDetails payment) {
         return null;
     }
+
+    @Override
+    public PersonalDetails find(Long id) {
+        return null;
+    }
+
+    @Override
+    public PersonalDetails find(Long id, Long userId) {
+        return null;
+    }
 }

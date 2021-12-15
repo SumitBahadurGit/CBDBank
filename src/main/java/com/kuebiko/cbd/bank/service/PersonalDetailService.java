@@ -16,8 +16,13 @@ public class PersonalDetailService extends BaseService<PersonalDetails,PersonalD
     }
 
     @Override
-    public void find(Long paymentId, Long userId) {
+    public PersonalDetails find(Long paymentId, Long userId) {
+        return null;
+    }
 
+    @Override
+    public PersonalDetails find(Long id) {
+        return null;
     }
 
     @Override

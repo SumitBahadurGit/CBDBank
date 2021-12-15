@@ -37,4 +37,9 @@ public class PaymentDao extends Dao<Payment>{
     public Payment find(Long id) {
         return null;
     }
+
+    @Override
+    public Payment find(Long id, Long userId) {
+        return null;
+    }
 }

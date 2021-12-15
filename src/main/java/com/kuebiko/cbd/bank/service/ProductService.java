@@ -17,8 +17,13 @@ public class ProductService extends BaseService<Product,Product> {
 
 
     @Override
-    public void find(Long paymentId, Long userId) {
+    public Product find(Long paymentId, Long userId) {
+        return null;
+    }
 
+    @Override
+    public Product find(Long id) {
+        return null;
     }
 
     @Override
