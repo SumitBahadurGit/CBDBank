@@ -4,6 +4,7 @@ import com.kuebiko.cbd.bank.model.Product;
 import com.kuebiko.cbd.bank.service.BaseService;
 import com.kuebiko.cbd.bank.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,8 +18,15 @@ public class ProductController extends BaseController{
 
     @PostMapping
     @RequestMapping("/save")
-    public Product saveValue(@RequestBody Product item){
-        return (Product)getService().save(item);
+    public ResponseEntity<Product> saveValue(@RequestBody Product item){
+        Product response=new Product();
+        try {
+            response=(Product)getService().save(item);
+        } catch (Exception e) {
+            response.setMessage(e.getMessage());
+            return ResponseEntity.badRequest().body(response);
+        }
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping
