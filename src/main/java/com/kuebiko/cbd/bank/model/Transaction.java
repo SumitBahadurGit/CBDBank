@@ -1,7 +1,10 @@
 package com.kuebiko.cbd.bank.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.Date;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Transaction {
     private Long invoice;
     private Date date;
