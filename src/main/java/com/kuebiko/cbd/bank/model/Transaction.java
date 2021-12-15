@@ -6,6 +6,7 @@ public class Transaction {
     private Long invoice;
     private Date date;
     private Boolean successful;
+    private String message;
 
     public Long getInvoice() {
         return invoice;
@@ -30,4 +31,6 @@ public class Transaction {
     public void setSuccessful(Boolean successful) {
         this.successful = successful;
     }
+
+    public void setMessage(String message) {this.message=message;}
 }
