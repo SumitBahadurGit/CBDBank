@@ -17,7 +17,7 @@ public class ProductController extends BaseController{
 
     @PostMapping
     @RequestMapping("/save")
-    public Product saveValue(@RequestBody Product item){
+    public Product saveValue(@RequestBody Product item) throws Exception {
         return (Product)getService().save(item);
     }
 

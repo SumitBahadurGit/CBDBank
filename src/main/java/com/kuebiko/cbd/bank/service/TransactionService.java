@@ -5,6 +5,7 @@ import com.kuebiko.cbd.bank.dao.TransactionDao;
 import com.kuebiko.cbd.bank.dao.UserDao;
 import com.kuebiko.cbd.bank.model.Transaction;
 
+import com.kuebiko.cbd.bank.util.TransactionValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,8 @@ public class TransactionService extends BaseService<Transaction, Transaction> {
     }
 
     @Override
-    public Transaction save(Transaction data) {
+    public Transaction save(Transaction data) throws Exception {
+        TransactionValidator.validate(data);
         return (Transaction) dao.save(data);
     }
 

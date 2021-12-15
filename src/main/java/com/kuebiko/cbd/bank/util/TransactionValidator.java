@@ -20,7 +20,7 @@ public class TransactionValidator {
 
         Boolean success=transaction.getSuccessful();
         if(ObjectUtils.isEmpty(success)){
-            throw new Exception("Date cannot be empty");
+            throw new Exception("Success cannot be empty");
         }
 
     }
