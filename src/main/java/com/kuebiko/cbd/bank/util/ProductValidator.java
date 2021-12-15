@@ -15,10 +15,10 @@ public class ProductValidator
             throw new Exception("name cannot be empty");
         }
 
-//        boolean inStock=pd.isInStock();
-//        if(ObjectUtils.isEmpty(inStock)){
-//            throw new Exception("in stock value cannot be empty");
-//        }
+        Boolean inStock=pd.getInStock();
+        if(ObjectUtils.isEmpty(inStock)){
+            throw new Exception("in stock value cannot be empty");
+        }
 
         Double prize=pd.getPrize();
         if(ObjectUtils.isEmpty(prize)){
