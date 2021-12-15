@@ -17,19 +17,20 @@ public class ProductService extends BaseService<Product,Product> {
 
 
     @Override
-    public Product find(Long paymentId, Long userId) {
-        return null;
-    }
-
-    @Override
-    public Product find(Long id) {
+    public Product find(Long productId, Long userId) {
         return null;
     }
 
     @Override
     public Product save(Product data) {
-        dao.save(data);
-        return null;
+
+        return (Product)dao.save(data);
+    }
+
+    @Override
+    public Product find(Long productId) {
+        Product product=(Product)dao.find(productId);
+        return product;
     }
 
 }
