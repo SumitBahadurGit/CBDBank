@@ -23,7 +23,6 @@ public class PaymentService extends BaseService<Payment,Payment> {
 
     @Override
     public Payment save(Payment data) {
-
         return (Payment) dao.save(data);
     }
 
