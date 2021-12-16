@@ -15,7 +15,7 @@ public class ProductMapper {
         productEntity.setProductId(product.getProductId());
         productEntity.setPrize(product.getPrize());
         productEntity.setName(product.getName());
-        productEntity.setInStock(product.isInStock());
+        productEntity.setInStock(product.getInStock());
 
         return productEntity;
 
@@ -29,7 +29,7 @@ public class ProductMapper {
         Product newProduct=new Product();
         newProduct.setProductId(productEntity.getProductId());
         newProduct.setPrize(productEntity.getPrize());
-        newProduct.setInStock(productEntity.isInStock());
+        newProduct.setInStock(productEntity.getInStock());
         newProduct.setName(productEntity.getName());
 
         return newProduct;

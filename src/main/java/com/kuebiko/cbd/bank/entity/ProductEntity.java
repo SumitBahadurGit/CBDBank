@@ -13,7 +13,7 @@ public class ProductEntity {
     private String name;
 
     @Column
-    private boolean inStock;
+    private Boolean inStock;
 
     @Column
     private Double prize;
@@ -34,11 +34,11 @@ public class ProductEntity {
         this.name = name;
     }
 
-    public boolean isInStock() {
+    public Boolean getInStock() {
         return inStock;
     }
 
-    public void setInStock(boolean inStock) {
+    public void setInStock(Boolean inStock) {
         this.inStock = inStock;
     }
 

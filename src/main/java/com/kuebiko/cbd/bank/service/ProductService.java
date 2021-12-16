@@ -4,6 +4,7 @@ import com.kuebiko.cbd.bank.dao.Dao;
 import com.kuebiko.cbd.bank.dao.ProductDao;
 import com.kuebiko.cbd.bank.model.Payment;
 import com.kuebiko.cbd.bank.model.Product;
+import com.kuebiko.cbd.bank.util.ProductValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +23,8 @@ public class ProductService extends BaseService<Product,Product> {
     }
 
     @Override
-    public Product save(Product data) {
-
+    public Product save(Product data) throws Exception{
+        ProductValidator.validate(data);
         return (Product)dao.save(data);
     }
 
