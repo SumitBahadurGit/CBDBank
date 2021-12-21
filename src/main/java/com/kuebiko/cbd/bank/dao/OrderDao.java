@@ -33,9 +33,4 @@ public class OrderDao extends Dao<Order>{
 
         return returnOrder;
     }
-
-    @Override
-    public Order find(Long id, Long userId) {
-        return null;
-    }
 }

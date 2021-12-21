@@ -3,6 +3,7 @@ package com.kuebiko.cbd.bank.service;
 import com.kuebiko.cbd.bank.dao.Dao;
 import com.kuebiko.cbd.bank.dao.OrderDao;
 import com.kuebiko.cbd.bank.model.Order;
+import com.kuebiko.cbd.bank.util.OrderValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,8 @@ public class OrderService extends BaseService<Order, Order>{
     }
 
     @Override
-    public Order save(Order order) {
+    public Order save(Order order) throws Exception {
+        OrderValidator.validate(order);
         return (Order) dao.save(order);
     }
 }

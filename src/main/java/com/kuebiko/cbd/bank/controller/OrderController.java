@@ -1,9 +1,9 @@
 package com.kuebiko.cbd.bank.controller;
 
 import com.kuebiko.cbd.bank.model.Order;
-import com.kuebiko.cbd.bank.service.BaseService;
 import com.kuebiko.cbd.bank.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,8 +23,15 @@ public class OrderController extends BaseController{
 
     @PostMapping
     @RequestMapping("/save")
-    public Order saveOrder(@RequestBody Order payload){
-        return (Order) getService().save(payload);
+    public ResponseEntity<Order> saveOrder(@RequestBody Order payload){
+        Order order = new Order();
+        try{
+            order =  (Order) getService().save(payload);
+        }catch(Exception e){
+            order.setMessage(e.getMessage());
+            return ResponseEntity.badRequest().body(order);
+        }
+        return ResponseEntity.ok(order);
     }
 
 }

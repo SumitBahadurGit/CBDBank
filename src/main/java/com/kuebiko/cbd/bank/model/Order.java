@@ -12,6 +12,7 @@ public class Order {
     private Double price;
     private Double sales;
     private Double tax;
+    private String message;
 
     public Long getOrderId() {
         return orderId;
@@ -49,6 +50,10 @@ public class Order {
         return orderDate;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
     public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }
@@ -75,5 +80,9 @@ public class Order {
 
     public void setTax(Double tax) {
         this.tax = tax;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
